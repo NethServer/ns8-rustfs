@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Get rustfs configuration",
+    "$id": "http://nethserver.org/json-schema/task/output/rustfs/get-configuration",
+    "description": "Get rustfs configuration",
+    "examples": [
+        {
+            "host_console": "console.rustfs.test.local",
+            "host_server": "rustfs.test.local",
+            "lets_encrypt": true,
+            "password": "nethesis",
+            "user": "nethesis"
+        }
+    ],
+    "type": "object"
+}

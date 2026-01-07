@@ -1,0 +1,29 @@
+[Unit]
+Description=rustfs server
+
+[Service]
+Environment=PODMAN_SYSTEMD_UNIT=%n
+EnvironmentFile=%S/state/environment
+WorkingDirectory=%S/state
+Restart=always
+ExecStartPre=/bin/rm -f %t/rustfs.pid %t/rustfs.ctr-id
+ExecStart=/usr/bin/podman run \
+    --detach \
+    --conmon-pidfile=%t/rustfs.pid \
+    --cidfile=%t/rustfs.ctr-id \
+    --cgroups=no-conmon \
+    --replace --name=%N \
+    --publish=127.0.0.1:${TCP_SERVER_PORT}:9000 \
+    --publish=127.0.0.1:${TCP_CONSOLE_PORT}:9001 \
+    --env=rustfs_ROOT_USER=${rustfs_ROOT_USER} \
+    --env=rustfs_ROOT_PASSWORD=${rustfs_ROOT_PASSWORD} \
+    --env=rustfs_DOMAIN=${rustfs_HOST_SERVER} \
+    --volume=${rustfs_STORAGE}:/data \
+    ${rustfs_IMAGE} server /data --console-address ":9001"
+ExecStop=/usr/bin/podman stop --ignore --cidfile %t/rustfs.ctr-id -t 10
+ExecStopPost=/usr/bin/podman rm --ignore -f --cidfile %t/rustfs.ctr-id
+PIDFile=%t/rustfs.pid
+Type=forking
+
+[Install]
+WantedBy=default.target

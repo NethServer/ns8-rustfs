@@ -1,0 +1,20 @@
+{
+  "name": "rustfs",
+  "description": {
+    "en": "S3 compatible object storage",
+    "it": "storage a oggetti compatibile con S3"
+  },
+  "categories": ["storage"],
+  "authors": [
+    {
+      "name": "Giacomo Sanchietti",
+      "email": "giacomo.sanchietti@nethserver.org"
+    }
+  ],
+  "docs": {
+    "documentation_url": "https://docs.nethserver.org/projects/ns8/en/latest/rustfs.html",
+    "bug_url": "https://github.com/NethServer/dev",
+    "code_url": "https://github.com/NethServer/ns8-rustfs"
+  },
+  "source": "ghcr.io/nethserver/rustfs"
+}
