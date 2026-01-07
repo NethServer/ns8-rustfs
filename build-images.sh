@@ -35,7 +35,7 @@ buildah config --entrypoint=/ \
     --label="org.nethserver.tcp-ports-demand=2" \
     --label="org.nethserver.rootfull=0" \
     --label="org.nethserver.min-core=3.12.4-0" \
-    --label="org.nethserver.images=quay.io/rustfs/rustfs:RELEASE.2023-08-23T10-07-06Z" \
+    --label="org.nethserver.images=docker.io/rustfs/rustfs:1.0.0-alpha.78" \
     "${container}"
 # Commit the image
 buildah commit "${container}" "${repobase}/${reponame}"
