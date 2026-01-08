@@ -9,7 +9,6 @@
     "watch": "vue-cli-service build --watch"
   },
   "dependencies": {
-    "@achrinza/node-ipc": "^9.2.10",
     "@carbon/icons-vue": "^10.37.0",
     "@carbon/vue": "^2.40.0",
     "@nethserver/ns8-ui-lib": "^1.10.1",
