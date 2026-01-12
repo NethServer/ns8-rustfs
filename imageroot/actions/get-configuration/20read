@@ -25,7 +25,7 @@ import sys
 import agent
 import os
 
-config = {'user': 'rustfsadmin', 'password': 'rustfsadmin', 'host_server' : '', 'host_console': '', 'lets_encrypte': False}
+config = {'user': 'rustfsadmin', 'password': 'rustfsadmin', 'host_server' : '', 'host_console': '', 'lets_encrypt': False}
 
 try:
     # Read current configuration from config file
