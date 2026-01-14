@@ -8,7 +8,7 @@ Retry test
     Wait Until Keyword Succeeds    60 seconds    1 second    ${keyword}
 
 Backend URL is reachable
-    ${rc} =    Execute Command    curl -f ${backend_url}
+    ${rc} =    Execute Command    curl -f ${backend_url}/rustfs/console/auth/login
     ...    return_rc=True  return_stdout=False
     Should Be Equal As Integers    ${rc}  0
 
@@ -39,8 +39,8 @@ Check if rustfs works as expected
     Retry test    Backend URL is reachable
 
 Verify rustfs frontend title
-    ${output} =    Execute Command    curl -s ${backend_url}
-    Should Contain    ${output}    <meta content="rustfs Console" name="description"/>
+    ${output} =    Execute Command    curl -s ${backend_url}/rustfs/console/auth/login
+    Should Contain    ${output}    <meta name="description" content="RustFS is a distributed file system written in Rust.">
 
 Check if rustfs is removed correctly
     ${rc} =    Execute Command    remove-module --no-preserve ${module_id}
