@@ -357,7 +357,7 @@ export default {
         }
       }
 
-      if ((this.host_console && this.host_server) && this.host_console == this.host_server) {
+      if (this.host_console && this.host_server && this.host_console === this.host_server) {
         this.error.host_console = this.$t("settings.different");
         this.error.host_server = this.$t("settings.different");
 
