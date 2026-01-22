@@ -20,7 +20,6 @@
 # along with NethServer.  If not, see COPYING.
 #
 
-import os
 import sys
 import json
 import agent
