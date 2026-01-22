@@ -38,4 +38,7 @@ try:
 except:
     pass
 
+# Do not send password from config.json, except if it's empty
+config['password'] = ''
+
 json.dump(config, fp=sys.stdout)
