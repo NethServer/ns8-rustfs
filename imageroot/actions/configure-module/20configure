@@ -29,11 +29,10 @@ request = json.load(sys.stdin)
 
 agent.set_env("RUSTFS_HOST_SERVER", request['host_server'])
 user = request.get('user', 'rustfsadmin')
-password = request.get('password', 'rustfsadmin')
 agent.set_env("RUSTFS_ROOT_USER", user)
-agent.set_env("RUSTFS_ROOT_PASSWORD", password)
-storage = request.get('storage', 'rustfs-data')
-agent.set_env("RUSTFS_STORAGE", storage)
+password = request.get('password', '')
+if password:
+    agent.set_env("RUSTFS_ROOT_PASSWORD", password)
 
 # Save configuration to JSON for later user and backup
 with open('config.json', 'w') as config:
