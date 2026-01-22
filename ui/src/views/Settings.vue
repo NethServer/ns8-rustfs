@@ -73,7 +73,7 @@
                         node: this.status.node_ui_name
                           ? this.status.node_ui_name
                           : this.status.node,
-                      }
+                      },
                     )
                   "
                   :showCloseButton="false"
@@ -235,12 +235,12 @@ export default {
       // register to task error
       this.core.$root.$once(
         `${taskAction}-aborted-${eventId}`,
-        this.getStatusAborted
+        this.getStatusAborted,
       );
       // register to task completion
       this.core.$root.$once(
         `${taskAction}-completed-${eventId}`,
-        this.getStatusCompleted
+        this.getStatusCompleted,
       );
       const res = await to(
         this.createModuleTaskForApp(this.instanceName, {
@@ -250,7 +250,7 @@ export default {
             isNotificationHidden: true,
             eventId,
           },
-        })
+        }),
       );
       const err = res[0];
       if (err) {
@@ -278,14 +278,14 @@ export default {
       this.core.$root.$off(taskAction + "-aborted");
       this.core.$root.$once(
         taskAction + "-aborted",
-        this.getConfigurationAborted
+        this.getConfigurationAborted,
       );
 
       // register to task completion
       this.core.$root.$off(taskAction + "-completed");
       this.core.$root.$once(
         taskAction + "-completed",
-        this.getConfigurationCompleted
+        this.getConfigurationCompleted,
       );
 
       const res = await to(
@@ -295,7 +295,7 @@ export default {
             title: this.$t("action." + taskAction),
             isNotificationHidden: true,
           },
-        })
+        }),
       );
       const err = res[0];
 
@@ -394,21 +394,21 @@ export default {
       this.core.$root.$off(taskAction + "-aborted");
       this.core.$root.$once(
         taskAction + "-aborted",
-        this.configureModuleAborted
+        this.configureModuleAborted,
       );
 
       // register to task validation
       this.core.$root.$off(taskAction + "-validation-failed");
       this.core.$root.$once(
         taskAction + "-validation-failed",
-        this.configureModuleValidationFailed
+        this.configureModuleValidationFailed,
       );
 
       // register to task completion
       this.core.$root.$off(taskAction + "-completed");
       this.core.$root.$once(
         taskAction + "-completed",
-        this.configureModuleCompleted
+        this.configureModuleCompleted,
       );
 
       const res = await to(
@@ -427,7 +427,7 @@ export default {
             }),
             description: this.$t("common.processing"),
           },
-        })
+        }),
       );
       const err = res[0];
 
