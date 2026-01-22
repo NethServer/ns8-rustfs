@@ -185,6 +185,7 @@ export default {
       host_console: "",
       lets_encrypt: true,
       isLetsEncryptCurrentlyEnabled: false,
+      initiallyConfigured: false,
       loading: {
         getConfiguration: false,
         configureModule: false,
@@ -212,7 +213,7 @@ export default {
       );
     },
     isConfigured() {
-      return !!this.host_server;
+      return !!this.initiallyConfigured;
     },
   },
   beforeRouteEnter(to, from, next) {
@@ -327,6 +328,7 @@ export default {
       this.password = config.password;
       this.lets_encrypt = config.lets_encrypt;
       this.isLetsEncryptCurrentlyEnabled = config.lets_encrypt;
+      this.initiallyConfigured = !!config.host_server;
 
       this.focusElement("host_server");
     },
@@ -361,6 +363,16 @@ export default {
 
         if (isValidationOk) {
           this.focusElement("host_console");
+          isValidationOk = false;
+        }
+      }
+
+      // Password is required only if not configured yet
+      if (!this.initiallyConfigured && !this.password) {
+        this.error.password = this.$t("common.required");
+
+        if (isValidationOk) {
+          this.focusElement("password");
           isValidationOk = false;
         }
       }
