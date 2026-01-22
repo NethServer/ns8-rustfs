@@ -88,14 +88,17 @@
               :invalid-message="error.user"
               ref="user"
             ></cv-text-input>
-            <cv-text-input
+            <NsTextInput
               :label="$t('settings.password')"
               v-model="password"
-              :placeholder="$t('settings.password')"
+              :placeholder="isConfigured ? $t('settings.unchanged_password_placeholder') : ''"
+              :helper-text="$t('settings.password_helper')"
               :disabled="stillLoading"
               :invalid-message="error.password"
+              type="password"
+              minlength="8"
               ref="password"
-            ></cv-text-input>
+            ></NsTextInput>
             <cv-row v-if="error.configureModule">
               <cv-column>
                 <NsInlineNotification
@@ -177,7 +180,7 @@ export default {
       validationErrorDetails: [],
       urlCheckInterval: null,
       user: "rustfsadmin",
-      password: "rustfsadmin",
+      password: "",
       host_server: "",
       host_console: "",
       lets_encrypt: true,
@@ -207,6 +210,9 @@ export default {
         this.loading.configureModule ||
         this.loading.getStatus
       );
+    },
+    isConfigured() {
+      return !!this.host_server;
     },
   },
   beforeRouteEnter(to, from, next) {
