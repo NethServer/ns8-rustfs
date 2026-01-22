@@ -96,23 +96,6 @@
               :invalid-message="error.password"
               ref="password"
             ></cv-text-input>
-            <cv-accordion ref="accordion">
-              <cv-accordion-item :open="toggleAccordion[0]">
-                <template slot="title">{{ $t("common.advanced") }}</template>
-                <template slot="content">
-                  <cv-text-input
-                    :label="$t('settings.storage_path')"
-                    v-model="storage"
-                    :helper-text="$t('settings.storage_path_helper')"
-                    :invalid-message="error.storage"
-                    :disabled="stillLoading"
-                    ref="storage"
-                  >
-                  </cv-text-input>
-                </template>
-              </cv-accordion-item>
-            </cv-accordion>
-            <br />
             <cv-row v-if="error.configureModule">
               <cv-column>
                 <NsInlineNotification
@@ -199,7 +182,6 @@ export default {
       host_console: "",
       lets_encrypt: true,
       isLetsEncryptCurrentlyEnabled: false,
-      storage: "",
       loading: {
         getConfiguration: false,
         configureModule: false,
@@ -213,7 +195,6 @@ export default {
         user: "",
         password: "",
         lets_encrypt: "",
-        storage: "",
         getStatus: "",
       },
     };
@@ -340,7 +321,6 @@ export default {
       this.password = config.password;
       this.lets_encrypt = config.lets_encrypt;
       this.isLetsEncryptCurrentlyEnabled = config.lets_encrypt;
-      this.storage = config.storage;
 
       this.focusElement("host_server");
     },
@@ -440,7 +420,6 @@ export default {
             user: this.user,
             password: this.password,
             lets_encrypt: this.lets_encrypt ? true : false,
-            storage: this.storage,
           },
           extra: {
             title: this.$t("settings.configure_instance", {
