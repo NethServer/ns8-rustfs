@@ -43,13 +43,7 @@
         },
         "password": {
             "type": "string",
-            "description": "Password of the admin user, default is 'rustfsadmin'",
-            "minLength": 1
-        },
-        "storage": {
-            "type": "string",
-            "description": "Volume name or path to mount as storage'",
-            "minLength": 1
+            "description": "Password of the admin user, default is 'rustfsadmin'"
         }
     }
 }
