@@ -23,7 +23,7 @@ ExecStart=/usr/bin/podman run \
     --env=RUSTFS_ACCESS_KEY=${RUSTFS_ROOT_USER} \
     --env=RUSTFS_SECRET_KEY=${RUSTFS_ROOT_PASSWORD} \
     --env=RUSTFS_CONSOLE_ENABLE=true \
-    --volume=${RUSTFS_STORAGE}:/data \
+    --volume=rustfs-data:/data \
     ${RUSTFS_IMAGE}
 ExecStop=/usr/bin/podman stop --ignore --cidfile %t/rustfs.ctr-id -t 10
 ExecStopPost=/usr/bin/podman rm --ignore -f --cidfile %t/rustfs.ctr-id

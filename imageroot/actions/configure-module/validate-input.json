@@ -9,8 +9,7 @@
             "password": "rustfsadmin",
             "host_server": "myrustfs.nethserver.org",
             "host_console": "console.myrustfs.nethserver.org",
-            "lets_encrypt": true,
-            "storage": "rustfs-data"
+            "lets_encrypt": true
         }
     ],
     "type": "object",
@@ -44,11 +43,6 @@
         "password": {
             "type": "string",
             "description": "Password of the admin user, default is 'rustfsadmin'",
-            "minLength": 1
-        },
-        "storage": {
-            "type": "string",
-            "description": "Volume name or path to mount as storage'",
             "minLength": 1
         }
     }
