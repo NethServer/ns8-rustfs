@@ -35,5 +35,8 @@ if password != "":
     agent.set_env("RUSTFS_ROOT_PASSWORD", password)
 
 # Save configuration to JSON for later user and backup
+if not password:
+    del request['password']
+
 with open('config.json', 'w') as config:
     config.write(json.dumps(request))
