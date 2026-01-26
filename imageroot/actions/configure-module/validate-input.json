@@ -42,8 +42,7 @@
         },
         "password": {
             "type": "string",
-            "description": "Password of the admin user",
-            "minLength": 1
+            "description": "Password of the admin user"
         }
     }
 }
