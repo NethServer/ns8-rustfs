@@ -19,15 +19,11 @@
     "properties": {
         "host_console": {
             "type": "string",
-            "description": "Host name for the server, this host will be use by S3 clients",
-            "format": "hostname",
-            "pattern": "\\."
+            "description": "Host name for the server, this host will be use by S3 clients"
         },
         "host_server": {
             "type": "string",
-            "description": "Host name for the UI, this how will serve the management UI",
-            "format": "hostname",
-            "pattern": "\\."
+            "description": "Host name for the UI, this how will serve the management UI"
         },
         "lets_encrypt": {
             "type": "boolean",
@@ -36,8 +32,11 @@
         },
         "user": {
             "type": "string",
-            "description": "Name of the admin user, default is 'rustfsadmin'",
-            "minLength": 1
+            "description": "Name of the admin user, default is 'rustfsadmin'"
+        },
+        "password": {
+            "type": "string",
+            "description": "Password of the admin user, default is 'rustfsadmin'"
         }
     }
 }
