@@ -25,7 +25,7 @@ import sys
 import agent
 import os
 
-config = {'user': 'rustfsadmin', 'host_server' : '', 'host_console': '', 'lets_encrypt': False}
+config = {'user': 'rustfsadmin', 'password': '', 'host_server' : '', 'host_console': '', 'lets_encrypt': False}
 
 try:
     # Read current configuration from config file
@@ -35,10 +35,9 @@ try:
             agent.get_route(f"{os.environ['MODULE_ID']}-console").get('lets_encrypt', False) and
             agent.get_route(f"{os.environ['MODULE_ID']}-server").get('lets_encrypt', False)
         )
-        # remove password if present to not send it to UI
-        if "password" in config:
-            del config["password"]
 except:
     pass
+# Do not expose password 
+config["password"] = ''
 
 json.dump(config, fp=sys.stdout)
