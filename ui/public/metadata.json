@@ -1,5 +1,5 @@
 {
-  "name": "rustfs",
+  "name": "RustFS",
   "description": {
     "en": "S3 compatible object storage",
     "it": "storage a oggetti compatibile con S3"
@@ -7,8 +7,12 @@
   "categories": ["storage"],
   "authors": [
     {
-      "name": "Giacomo Sanchietti",
-      "email": "giacomo.sanchietti@nethserver.org"
+      "name": "Stéphane de Labrusse",
+      "email": "stephdl@de-labrusse.fr"
+    },
+    {
+      "name": "Markus Neuberger",
+      "email": "dev@markusneuberger.at"
     }
   ],
   "docs": {

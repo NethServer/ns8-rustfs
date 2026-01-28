@@ -1,7 +1,6 @@
 # ns8-rustfs
 
-[rustfs](https://min.io/) module for NS 8.
-This is a template module for [NethServer 8](https://github.com/NethServer/ns8-core).
+[RustFS](https://rustfs.com/) is a distributed object storage system written in Rust.
 
 ## Install
 
@@ -53,24 +52,11 @@ Use the UI to create a generic S3 backup repository and schedule a backup for it
 
 ### Use an external disk as rustfs storage
 
-You can configure a rustfs instance to use a local attached USB/SCSI disk.
-Given a disk named `scsi-disk1`, follow these steps:
-```
-# Create a mount point for your disk:
-$ mkdir -p /mnt/data
+Rustfs supports volumes so if there's another disk mounted under `/mnt` you can choose to use that disk for rustfs storage at installation.
 
-# Change fstab to automatically mount the disk at boot
-$ echo '/dev/disk/by-id/scsi-disk1 /mnt/data ext4 defaults,nofail,discard 0 0' >> /etc/fstab
-$ systemctl daemon-reload
+### Backup
 
-# Mount the disk
-$ mount /mnt/data
-
-# Make sure the disk is accessible from rustfs instance (eg. rustfs1)
-$ chown rustfs1:rustfs1 /mnt/data/
-```
-
-From the module UI, setup the `Storage path` under the advanded section and set it to `/mnt/data`.
+To avoid inconsistencies, do not backup rustfs itself while other backups to the rustfs storage are running.
 
 ## Uninstall
 
@@ -81,7 +67,6 @@ To uninstall the instance:
 ## Testing
 
 Test the module using the `test-module.sh` script:
-
 
     ./test-module.sh <NODE_ADDR> ghcr.io/nethserver/rustfs:latest
 
