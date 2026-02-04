@@ -26,7 +26,7 @@ Launch `configure-module`, by setting the following parameters:
 
 Example:
 
-    api-cli run module/rustfs1/configure-module --data '{"host_server": "myrustfs.nethserver.org", "host_console": "console.myrustfs.nethserver.org", "lets_encrypt": true}'
+    api-cli run module/rustfs1/configure-module --data '{"host_server": "myrustfs.example.org", "host_console": "console.myrustfs.example.org", "lets_encrypt": true}'
 
 The above command will:
 - start and configure the rustfs instance: default root credentials `rustfsadmin`:`rustfsadmin`
@@ -34,7 +34,7 @@ The above command will:
 
 Send a test HTTP request to the rustfs backend service:
 
-    curl https://myrustfs.nethserver.org
+    curl https://myrustfs.example.org
 
 ### Use rustfs as NS8 backup storage
 
@@ -44,7 +44,7 @@ First, create a bucket. You can do from the UI or using the command line, eg:
 ```
 curl  https://dl.min.io/client/mc/release/linux-amd64/mc -o /usr/local/bin/mc
 chmod a+x /usr/local/bin/mc
-mc alias set rustfs https://myrustfs.nethserver.org rustfsadmin rustfsadmin --api S3v4
+mc alias set rustfs https://myrustfs.example.org rustfsadmin rustfsadmin --api S3v4
 mc mb rustfs/test1
 ```
 
