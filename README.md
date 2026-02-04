@@ -1,7 +1,6 @@
 # ns8-rustfs
 
-[rustfs](https://min.io/) module for NS 8.
-This is a template module for [NethServer 8](https://github.com/NethServer/ns8-core).
+[RustFS](https://rustfs.com/) is a distributed object storage system written in Rust.
 
 ## Install
 
@@ -27,7 +26,7 @@ Launch `configure-module`, by setting the following parameters:
 
 Example:
 
-    api-cli run module/rustfs1/configure-module --data '{"host_server": "myrustfs.nethserver.org", "host_console": "console.myrustfs.nethserver.org", "lets_encrypt": true}'
+    api-cli run module/rustfs1/configure-module --data '{"host_server": "myrustfs.example.org", "host_console": "console.myrustfs.example.org", "lets_encrypt": true}'
 
 The above command will:
 - start and configure the rustfs instance: default root credentials `rustfsadmin`:`rustfsadmin`
@@ -35,7 +34,7 @@ The above command will:
 
 Send a test HTTP request to the rustfs backend service:
 
-    curl https://myrustfs.nethserver.org
+    curl https://myrustfs.example.org
 
 ### Use rustfs as NS8 backup storage
 
@@ -45,7 +44,7 @@ First, create a bucket. You can do from the UI or using the command line, eg:
 ```
 curl  https://dl.min.io/client/mc/release/linux-amd64/mc -o /usr/local/bin/mc
 chmod a+x /usr/local/bin/mc
-mc alias set rustfs https://myrustfs.nethserver.org rustfsadmin rustfsadmin --api S3v4
+mc alias set rustfs https://myrustfs.example.org rustfsadmin rustfsadmin --api S3v4
 mc mb rustfs/test1
 ```
 
@@ -53,24 +52,13 @@ Use the UI to create a generic S3 backup repository and schedule a backup for it
 
 ### Use an external disk as rustfs storage
 
-You can configure a rustfs instance to use a local attached USB/SCSI disk.
-Given a disk named `scsi-disk1`, follow these steps:
-```
-# Create a mount point for your disk:
-$ mkdir -p /mnt/data
+Rustfs supports using multiple storage volumes. If your system administrator has provisioned an additional 
+volume (for example, an extra disk mounted somewhere on the filesystem), you can choose that volume as the 
+Rustfs storage location during installation.
 
-# Change fstab to automatically mount the disk at boot
-$ echo '/dev/disk/by-id/scsi-disk1 /mnt/data ext4 defaults,nofail,discard 0 0' >> /etc/fstab
-$ systemctl daemon-reload
+### Backup
 
-# Mount the disk
-$ mount /mnt/data
-
-# Make sure the disk is accessible from rustfs instance (eg. rustfs1)
-$ chown rustfs1:rustfs1 /mnt/data/
-```
-
-From the module UI, setup the `Storage path` under the advanded section and set it to `/mnt/data`.
+To avoid inconsistencies, do not backup rustfs itself while other backups to the rustfs storage are running.
 
 ## Uninstall
 
@@ -81,7 +69,6 @@ To uninstall the instance:
 ## Testing
 
 Test the module using the `test-module.sh` script:
-
 
     ./test-module.sh <NODE_ADDR> ghcr.io/nethserver/rustfs:latest
 
