@@ -52,7 +52,9 @@ Use the UI to create a generic S3 backup repository and schedule a backup for it
 
 ### Use an external disk as rustfs storage
 
-Rustfs supports using multiple storage volumes. If your system administrator has provisioned an additional volume (for example, an extra disk mounted somewhere on the filesystem), you can choose that volume as the Rustfs storage location during installation.
+Rustfs supports using multiple storage volumes. If your system administrator has provisioned an additional 
+volume (for example, an extra disk mounted somewhere on the filesystem), you can choose that volume as the 
+Rustfs storage location during installation.
 
 ### Backup
 
