@@ -19,7 +19,9 @@
         "mount": "Mount",
         "no_services": "No services",
         "no_images": "No images",
-        "no_volumes": "No volumes"
+        "no_volumes": "No volumes",
+        "rustfs_webapp": "RustFS",
+        "open_webapp": "Go to web console"
     },
     "settings": {
         "title": "Settings",

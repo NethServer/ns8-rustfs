@@ -7,7 +7,9 @@
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["rustfs/rustfs"],
-      "ignoreUnstable": false
+      "ignoreUnstable": false,
+      "matchCurrentVersion": "/^.*-alpha/",
+      "allowedVersions": "/^.*-alpha/"
     }    
   ]
 }
