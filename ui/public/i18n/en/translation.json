@@ -19,7 +19,11 @@
         "mount": "Mount",
         "no_services": "No services",
         "no_images": "No images",
-        "no_volumes": "No volumes"
+        "no_volumes": "No volumes",
+        "rustfs_webapp": "RustFS",
+        "open_webapp": "Go to web console",
+        "not_configured": "Not configured",
+        "configure": "Configure"
     },
     "settings": {
         "title": "Settings",
@@ -50,7 +54,9 @@
         "get-status": "Get status",
         "get-configuration": "Get configuration",
         "configure-module": "Configure module",
-        "get-module-info": "Get module info"
+        "get-module-info": "Get module info",
+        "list-backup-repositories": "List backup repositories",
+        "list-backups": "List backups"
     },
     "error": {
         "error": "Error",
@@ -62,6 +68,7 @@
         "403": "Operation not authorized",
         "404": "Resource not found",
         "cannot_retrieve_module_info": "Cannot retrieve module info",
-        "cannot_retrieve_installed_modules": "Cannot retrieve installed modules"
+        "cannot_retrieve_installed_modules": "Cannot retrieve installed modules",
+        "cannot_retrieve_configuration": "Cannot retrieve configuration"
     }
 }
