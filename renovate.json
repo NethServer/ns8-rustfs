@@ -9,6 +9,6 @@
       "matchPackageNames": ["rustfs/rustfs"],
       "ignoreUnstable": false,
       "allowedVersions": "/^.*-alpha/"
-    }    
+    }
   ]
 }
