@@ -7,11 +7,11 @@
     {
       "fileMatch": ["build-images.sh"],
       "matchStrings": [
-        "docker\\.io/rustfs/rustfs:(?<currentValue>1\\.0\\.0-alpha\\.[0-9]+)"
+        "docker\\.io/rustfs/rustfs:(?<currentValue>1\\.0\\.0-alpha\\.[0-9]+-glibc)"
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "rustfs/rustfs",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "docker"
     }
   ],
   "packageRules": [
@@ -19,7 +19,7 @@
       "matchDatasources": ["docker"],
       "matchPackageNames": ["rustfs/rustfs"],
       "ignoreUnstable": false,
-      "allowedVersions": "/^.*-alpha/"
+      "allowedVersions": "/^1\\.0\\.0-alpha\\.[0-9]+-glibc$/"
     }
   ]
 }
