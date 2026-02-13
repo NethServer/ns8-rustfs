@@ -72,6 +72,8 @@ Extract CLI tool:
 
     tar -xzf rustfs-cli.tar.gz
 
+The archive contains a single binary named `rc`, which is the RustFS CLI executable.
+
 Copy the tool into the rustfs container:
 
     podman cp rc rustfs:/usr/local/bin/
