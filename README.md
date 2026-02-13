@@ -82,11 +82,11 @@ Enter rustfs container:
 
 Set rustfs alias:
 
-    rc alias set rustfs http://localhost:9000 <RUSTFS_ACCESS_KEY> <SECRET>
+    rc alias set rustfs http://localhost:9000 <RUSTFS_ACCESS_KEY> <RUSTFS_SECRET>
 
 Set minio alias:
 
-    rc alias set minio https://minioapi.example.com <MINIO_ACCESS_KEY> <SECRET>
+    rc alias set minio https://minioapi.example.com <MINIO_ACCESS_KEY> <MINIO_SECRET>
 
 Test:
 
