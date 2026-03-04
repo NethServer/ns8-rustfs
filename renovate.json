@@ -11,7 +11,7 @@
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "rustfs/rustfs",
-      "versioningTemplate": "docker"
+      "versioningTemplate": "semver"
     }
   ],
   "packageRules": [
