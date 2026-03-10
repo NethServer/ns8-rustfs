@@ -60,6 +60,12 @@ Rustfs storage location during installation.
 
 If you create an NS8 rustfs backup destination, don't forget to use the data encryption key from the minio backup to be able to read the backup content.
 
+If rustfs and minio are running on the same node, the minio FQDN needs to resolve to the Wireguard IP to be reachable. This can be achieved by adding the minio FQDN to `/etc/hosts`.
+
+For example, when the minio FQDN is `minio1.example.com`:
+
+`10.5.4.1 cluster-localnode minio1.example.com`
+
 Enter rustfs environment:
 
     runagent -m rustfs1
