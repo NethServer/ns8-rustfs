@@ -62,9 +62,12 @@ If you create an NS8 rustfs backup destination, don't forget to use the data enc
 
 If rustfs and minio are running on the same node, the minio FQDN needs to resolve to the Wireguard IP to be reachable. This can be achieved by adding the minio FQDN to `/etc/hosts`.
 
-For example, when the minio FQDN is `minio1.example.com`:
+The Wireguard IP can be found at the Nodes page, in the following example the default of `10.5.4.1` is used.
+For example, when the minio FQDN is `minioapi.example.com`, add the following line to `/etc/hosts`:
 
-`10.5.4.1 cluster-localnode minio1.example.com`
+`10.5.4.1 minioapi.example.com`
+
+Please remove the line after the migration to avoid future issues.
 
 Enter rustfs environment:
 
