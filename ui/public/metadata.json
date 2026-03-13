@@ -1,8 +1,8 @@
 {
   "name": "RustFS",
   "description": {
-    "en": "S3 compatible object storage",
-    "it": "storage a oggetti compatibile con S3"
+    "en": "S3-compatible object storage and MinIO replacement",
+    "it": "Storage ad oggetti S3-compatibile e sostituto di MinIO"
   },
   "categories": ["storage"],
   "authors": [
