@@ -17,12 +17,12 @@
         "different": "API e interfaccia web devono usare host differenti",
         "disabled": "Disabilitato",
         "host_server": "Nome host API server",
-        "storage_path": "Percorso di archiviazione",
-        "storage_path_helper": "rustfs memorizza i dati in 'rustfs-data' per impostazione predefinita. Per utilizzare un disco esterno, inserisci un percorso completo come '/mnt/data', assicurati che questa posizione esista già e sia un disco formattato e montato correttamente. Ma ricorda, cambiare il percorso di archiviazione significa che non farà parte del backup.",
-        "host_server_format": "Deve essere un nome di dorustfs completamente qualificato e valido",
-        "host_console_pattern": "Deve essere un nome di dorustfs completamente qualificato e valido",
-        "host_console_format": "Deve essere un nome di dorustfs completamente qualificato e valido",
-        "host_server_pattern": "Deve essere un nome di dorustfs completamente qualificato e valido"
+        "host_server_format": "Deve essere un nome dominio completo e valido",
+        "host_console_pattern": "Deve essere un nome di dominio completo e valido",
+        "host_console_format": "Deve essere un nome di dominio completo e valido",
+        "host_server_pattern": "Deve essere un nome host valido e completo di dominio",
+        "unchanged_password_placeholder": "Non modificato",
+        "password_helper": "Lasciare vuoto per mantenere la password corrente"
     },
     "error": {
         "error": "Errore",
@@ -34,7 +34,8 @@
         "network_timeout": "Timeout di rete",
         "generic_error": "Qualcosa è andato storto",
         "401": "Autenticazione non valida",
-        "403": "Operazione non autorizzata"
+        "403": "Operazione non autorizzata",
+        "cannot_retrieve_configuration": "Impossibile recuperare la configurazione"
     },
     "status": {
         "node": "Nodo",
@@ -50,13 +51,19 @@
         "app_instance": "Istanza app",
         "app_volumes": "Volume app|Volumi app",
         "installation_node": "Nodo di installazione",
-        "mount": "Percorso di mount"
+        "mount": "Percorso di mount",
+        "rustfs_webapp": "RustFS",
+        "open_webapp": "Vai alla console web",
+        "not_configured": "Non configurato",
+        "configure": "Configura"
     },
     "action": {
         "configure-module": "Configura modulo",
         "get-configuration": "Visualizza configurazione",
         "get-status": "Visualizza stato",
-        "get-module-info": "Visualizza info modulo"
+        "get-module-info": "Visualizza info modulo",
+        "list-backup-repositories": "Elenca i repository di backup",
+        "list-backups": "Elenca backup"
     },
     "about": {
         "title": "Informazioni"
