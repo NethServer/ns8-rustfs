@@ -1,25 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "local>NethServer/.github:ns8-automerge"
-  ],
-  "regexManagers": [
-    {
-      "fileMatch": ["build-images.sh"],
-      "matchStrings": [
-        "docker\\.io/rustfs/rustfs:(?<currentValue>1\\.0\\.0-alpha\\.[0-9]+-glibc)"
-      ],
-      "datasourceTemplate": "docker",
-      "depNameTemplate": "rustfs/rustfs",
-      "versioningTemplate": "semver"
-    }
-  ],
-  "packageRules": [
-    {
-      "matchDatasources": ["docker"],
-      "matchPackageNames": ["rustfs/rustfs"],
-      "ignoreUnstable": false,
-      "allowedVersions": "/^1\\.0\\.0-alpha\\.[0-9]+-glibc$/"
-    }
+    "local>NethServer/.github:ns8"
   ]
 }
