@@ -125,13 +125,9 @@ To uninstall the instance:
 
     remove-module --no-preserve rustfs1
 
-## Testing
+## Running tests locally
 
-Test the module using the `test-module.sh` script:
-
-    ./test-module.sh <NODE_ADDR> ghcr.io/nethserver/rustfs:latest
-
-The tests are made using [Robot Framework](https://robotframework.org/)
+This module uses the NS8 standard testing infrastructure. For instructions on how to run the test suite locally, refer to the [Running tests locally](https://github.com/NethServer/ns8-github-actions/blob/v1/README.md#running-tests-locally) section of ns8-github-actions.
 
 ## UI translation
 
