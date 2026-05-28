@@ -10,12 +10,13 @@
         "401": "Authentifizierung fehlerhaft",
         "network_timeout": "Netzwerk-Zeitüberschreitung",
         "network_error": "Netzwerk-Fehler",
-        "403": "Vorgang nicht autorisiert",
+        "403": "Vorgang nicht zulässig",
         "404": "Ressource nicht gefunden",
         "generic_error": "Etwas ist schief gegangen",
         "validation_error": "Fehler bei der Validierung",
         "cannot_retrieve_module_info": "Fehler beim Abruf der Modul-Info",
-        "cannot_retrieve_installed_modules": "Fehler beim Abruf installierter Module"
+        "cannot_retrieve_installed_modules": "Fehler beim Abruf installierter Module",
+        "cannot_retrieve_configuration": "Konfiguration kann nicht abgerufen werden"
     },
     "common": {
         "required": "Erforderlich",
@@ -35,12 +36,12 @@
         "password": "MiniIO Superuser Kennwort",
         "user": "rustfs Superuser Benutzername",
         "different": "Hostname von API und Web-Anwendung müssen unterschiedlich sein",
-        "storage_path": "Speicher-Pfad",
-        "storage_path_helper": "rustfs speichert Daten standardmäßig in 'rustfs-data'. Um stattdessen eine externe Festplatte zu verwenden, einen vollständiger Pfad wie \"/mnt/data\" angeben und sicherstellen, dass dieser Pfsd bereits existiert und eine ordnungsgemäß formatierte und gemountete Festplatte ist. Achtung: Eine Änderung des Speicherpfads bedeutet, dass dieser nicht in die Sicherung einbezogen wird.",
         "host_server_pattern": "Voll-qualifizierter Domänen-Name (FQDN) erforderlich",
         "host_server_format": "Voll-qualifizierter Domänen-Name (FQDN) erforderlich",
         "host_console_pattern": "Voll-qualifizierter Domänen-Name (FQDN) erforderlich",
-        "host_console_format": "Voll-qualifizierter Domänen-Name (FQDN) erforderlich"
+        "host_console_format": "Voll-qualifizierter Domänen-Name (FQDN) erforderlich",
+        "unchanged_password_placeholder": "unverändert",
+        "password_helper": "Leer lassen um aktuells Kennwort zu behalten"
     },
     "status": {
         "app_volumes": "App Volumen | App Volumen",
@@ -56,12 +57,18 @@
         "title": "Status",
         "app_instance": "App Instanz",
         "services": "Dienst | Dienste",
-        "app_images": "App Abbild | App Abbilder"
+        "app_images": "App Abbild | App Abbilder",
+        "open_webapp": "zur Web-Konsole wechseln",
+        "not_configured": "nicht konfiguriert",
+        "configure": "konfigurieren",
+        "rustfs_webapp": "RustFS"
     },
     "action": {
         "get-status": "Status abrufen",
         "get-configuration": "Konfiguration abrufen",
         "configure-module": "Modul konfigurieren",
-        "get-module-info": "Modul-Info abrufen"
+        "get-module-info": "Modul-Info abrufen",
+        "list-backup-repositories": "Sicherungs-Ziele auflisten",
+        "list-backups": "Datensicherungen auflisten"
     }
 }

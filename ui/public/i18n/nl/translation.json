@@ -2,12 +2,10 @@
     "settings": {
         "save": "Opslaan",
         "disabled": "Uitgeschakeld",
-        "storage_path": "Opslaglocatie",
         "user": "rustfs root-gebruikersnaam",
         "configure_instance": "Configureer {instance}",
         "different": "API- en webinterface hosts moeten verschillend zijn",
         "host_console": "Hostnaam van de webinterface",
-        "storage_path_helper": "rustfs slaat gegevens standaard op in 'rustfs-data'. Om een externe schijf te gebruiken, voert u een volledig pad in, zoals '/mnt/data'. Zorg ervoor dat deze locatie al bestaat en een correct geformatteerde en gekoppelde schijf is. Houd er echter rekening mee dat het wijzigen van het opslagpad betekent dat het geen deel uitmaakt van de back-up.",
         "host_server_format": "Moet een geldige, volledig gekwalificeerde domeinnaam zijn",
         "lets_encrypt": "Let's Encrypt certificaat",
         "host_console_pattern": "Moet een geldige, volledig gekwalificeerde domeinnaam zijn",
