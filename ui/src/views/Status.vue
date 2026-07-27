@@ -40,7 +40,9 @@
         <NsInfoCard
           light
           :title="$t('status.rustfs_webapp')"
-          :description="this.host_console ? this.host_console : $t('status.not_configured')"
+          :description="
+            this.host_console ? this.host_console : $t('status.not_configured')
+          "
           :icon="DataBackup32"
           :loading="loading.getConfiguration"
           :isErrorShown="error.getConfiguration"
