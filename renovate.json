@@ -1,15 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>NethServer/.github:ns8"],
-  "customManagers": [
-    {
-      "customType": "regex",
-      "fileMatch": ["^build-images\\.sh$"],
-      "matchStrings": [
-        "org\\.nethserver\\.images=docker\\.io/(?<depName>[^:]+):(?<currentValue>[-0-9.a-z]+)"
-      ],
-      "datasourceTemplate": "docker",
-      "versioningTemplate": "docker"
-    }
+  "extends": [
+    "local>NethServer/.github:ns8"
   ]
 }
