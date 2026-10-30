@@ -36,7 +36,7 @@ buildah config --entrypoint=/ \
     --label="org.nethserver.rootfull=0" \
     --label="org.nethserver.min-core=3.20.1" \
 	--label="org.nethserver.volumes=rustfs-data" \
-    --label="org.nethserver.images=docker.io/rustfs/rustfs:1.0.3-glibc" \
+    --label="org.nethserver.images=docker.io/rustfs/rustfs:1.0.4-glibc" \
     "${container}"
 # Commit the image
 buildah commit "${container}" "${repobase}/${reponame}"
